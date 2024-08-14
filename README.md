@@ -3,7 +3,7 @@
 # **Cryptography Task**
 > 01. “Xjnvw lc sluxjmw jsqm wjpmcqbg jg wqcxqmnvw; xjzjmmjd lc wjpm sluxjmw jsqm bqccqm zqy.” Zlwvzjxj Zpcvcol
 > 2. if you are crarcking this task so using https://www.quipqiup.com/
---
+
 # **Symmetric Encryption:**
 
 ## **GNU Privacy Guard**
@@ -82,4 +82,5 @@ On the AttackBox, you can find the directory for this task located at ``/root/Ro
 
 # **Authenticating with Passwords**
 > **Question:** You were auditing a system when you discovered that the MD5 hash of the admin password is 3fc0a7acf087f549ac2b266baf94b8b1. What is the original password?
+
 > **Answer :** qwerty123
