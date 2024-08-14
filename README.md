@@ -3,7 +3,7 @@
 # **Cryptography Task**
 > 01. “Xjnvw lc sluxjmw jsqm wjpmcqbg jg wqcxqmnvw; xjzjmmjd lc wjpm sluxjmw jsqm bqccqm zqy.” Zlwvzjxj Zpcvcol
 > 2. if you are crarcking this task so using https://www.quipqiup.com/
-
+--
 # **Symmetric Encryption:**
 
 ## **GNU Privacy Guard**
@@ -34,3 +34,52 @@ The necessary files for this task are located under ``/root/Rooms/cryptographyin
 
 On the AttackBox, you can find the directory for this task located at /root/Rooms/cryptographyintro/task03; alternatively, you can use the task file from Task 2 to work on your own machine.
 
+# **Diffie-Hellman Key Exchange**
+1. Let’s take a look at actual Diffie-Hellman parameters. We can use ``openssl`` to generate them; we need to specify the option ``dhparam`` to indicate that we want to generate Diffie-Hellman parameters along with the specified size in bits, such as ``2048`` or ``4096``
+
+2. In the console output below, we can view the prime number ``P`` and the generator ``G`` using the command ``openssl dhparam -in dhparams.pem -text -noout``. (This is similar to what we did with the RSA private key.)
+> 1. Command : ``openssl dhparam -out dhparams.pem 2048``
+
+# **Hashing**
+> 1. ls -lh
+> 2. sha256sum *
+> 3. hexdump text1.txt -C
+> 4. sha256sum text1.txt
+## HMAC
+> 1. The figure above represents the steps expressed in the following formula: H(K⊕opad,H(K⊕ipad,text)).
+
+> 2. To calculate the HMAC on a Linux system, you can use any of the available tools such as ``hmac256`` (or ``sha224hmac``, ``sha256hmac``, ``sha384hmac``, and ``sha512hmac``, where the secret key is added after the option ``--key``). Below we show an example of calculating the HMAC using ``hmac256`` and ``sha256hmac`` with two different keys.
+> 3. ``hmac256 s!Kr37 message.txt``
+> 4. ``sha256hmac message.txt --key s!Kr37``
+
+On the AttackBox, you can find the directory for this task located at /root/Rooms/cryptographyintro/task05; alternatively, you can use the task file from Task 2 to work on your own machine.
+
+# **PKI and SSL/TLS**
+You can use ``openssl`` to generate a certificate signing request using the command ``openssl req -new -nodes -newkey rsa:4096 -keyout key.pem -out cert.csr``. We used the following options:
+```
+
+    req -new create a new certificate signing request
+    -nodes save private key without a passphrase
+    -newkey generate a new private key
+    rsa:4096 generate an RSA key of size 4096 bits
+    -keyout specify where to save the key
+    -out save the certificate signing request
+```
+Then you will be asked to answer a series of questions, as shown in the console output below.
+> 1. ``openssl req -new -nodes -newkey rsa:4096 -keyout key.pem -out cert.csr``
+``` Once the CSR file is ready, you can send it to a CA of your choice to get it signed and ready to use on your server.
+
+Once the client, i.e., the browser, receives a signed certificate it trusts, the SSL/TLS handshake takes place. The purpose would be to agree on the ciphers and the secret key.
+
+We have just described how PKI applies to the web and SSL/TLS certificates. A trusted third party is necessary for the system to be scalable.
+
+For testing purposes, we have created a self-signed certificate. For example, the following command will generate a self-signed certificate.
+```
+> 2. ``openssl req -x509 -newkey -nodes rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 365``
+> 3. The  ``-x509`` indicates that we want to generate a self-signed certificate instead of a certificate request. The ``-sha256`` specifies the use of the ``SHA-256`` digest. It will be valid for one year as we added ``-days 365``.
+> 4. To answer the questions below, you need to inspect the certificate file ``cert.pem`` in the ``task06`` directory. You can use the following command to view your certificate: ``openssl x509 -in cert.pem -text``
+On the AttackBox, you can find the directory for this task located at ``/root/Rooms/cryptographyintro/task06``; alternatively, you can use the task file from Task 2 to work on your own machine.
+
+# **Authenticating with Passwords**
+> **Question:** You were auditing a system when you discovered that the MD5 hash of the admin password is 3fc0a7acf087f549ac2b266baf94b8b1. What is the original password?
+> **Answer :** qwerty123
