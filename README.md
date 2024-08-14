@@ -4,7 +4,7 @@
 > 01. “Xjnvw lc sluxjmw jsqm wjpmcqbg jg wqcxqmnvw; xjzjmmjd lc wjpm sluxjmw jsqm bqccqm zqy.” Zlwvzjxj Zpcvcol
 > 2. if you are crarcking this task so using https://www.quipqiup.com/
 
-```
+``
 GNU Privacy Guard
 
 The GNU Privacy Guard, also known as GnuPG or GPG, implements the OpenPGP standard.
@@ -41,4 +41,4 @@ openssl aes-256-cbc -pbkdf2 -iter 10000 -d -in encrypted_message -out original_m
 In the following questions, we will use gpg and openssl on the AttackBox to carry out symmetric encryption.
 
 The necessary files for this task are located under /root/Rooms/cryptographyintro/task02. The zip file attached to this task can be used to tackle the questions of tasks 2, 3, 4, 5, and 6.
-```
+``
