@@ -55,6 +55,7 @@ On the AttackBox, you can find the directory for this task located at /root/Room
 On the AttackBox, you can find the directory for this task located at /root/Rooms/cryptographyintro/task05; alternatively, you can use the task file from Task 2 to work on your own machine.
 
 # **PKI and SSL/TLS**
+> 1. Command : ``openssl x509 -in cert.pem -text``^imp
 You can use ``openssl`` to generate a certificate signing request using the command ``openssl req -new -nodes -newkey rsa:4096 -keyout key.pem -out cert.csr``. We used the following options:
 ```
 
