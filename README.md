@@ -56,7 +56,7 @@ On the AttackBox, you can find the directory for this task located at /root/Room
 
 # **PKI and SSL/TLS**
 > 1. Command : ``openssl x509 -in cert.pem -text``^imp
-You can use ``openssl`` to generate a certificate signing request using the command ``openssl req -new -nodes -newkey rsa:4096 -keyout key.pem -out cert.csr``. We used the following options:
+> 2. You can use ``openssl`` to generate a certificate signing request using the command ``openssl req -new -nodes -newkey rsa:4096 -keyout key.pem -out cert.csr``. We used the following options:
 ```
 
     req -new create a new certificate signing request
